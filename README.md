@@ -4,6 +4,8 @@
 
 This project aims to compare the color difference between color-restored images and their original counterparts. The actual process involves analyzing the color palette differences between the two images.
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/15IAx8eKlwPET7O_HTYrmF4C4BVypd9dP?usp=sharing)
+[ipynb](色板校正與分析_2.ipynb)
 ## Installation
 
 To run this project on your local machine, follow these steps:
