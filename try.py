@@ -1,3 +1,4 @@
+import os
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
@@ -7,9 +8,15 @@ import cba  # cba: ColorBlock Analysis
 #-------------------------------------------------------------------------#
 # 色板影像校正
 #-------------------------------------------------------------------------#
+
+# 讀入讀檔
+folder_path = 'src/Original'
+for filename in os.listdir(folder_path): Original_path = os.path.join(folder_path, filename)
+folder_path = 'src/Result_restored'
+for filename in os.listdir(folder_path): Result_restored_path = os.path.join(folder_path, filename)
 standard_val, standard_unwarp = cba.correction_and_analysis(cv2.imread("src/Standard.png"))
-original_photo_val, original_photo_unwarp = cba.correction_and_analysis(cv2.imread("src/Original.jpg"))
-restored_val, restored_unwarp = cba.correction_and_analysis(cv2.imread("src/Result_restored.jpg"))
+original_photo_val, original_photo_unwarp = cba.correction_and_analysis(cv2.imread(Original_path))
+restored_val, restored_unwarp = cba.correction_and_analysis(cv2.imread(Result_restored_path))
 
 #-------------------------------------------------------------------------#
 # 比較兩色版的差異
@@ -20,7 +27,6 @@ ax1.imshow(cv2.cvtColor(standard_unwarp, cv2.COLOR_BGR2RGB))
 ax1.set_title('Standard')
 ax2.imshow(cv2.cvtColor(restored_unwarp, cv2.COLOR_BGR2RGB))
 ax2.set_title('Restored')
-plt.show()
 
 # 測試與比較
 delta_e_1 = cba.compare_colorboard(standard_val, restored_val)
@@ -32,7 +38,6 @@ ax1.imshow(cv2.cvtColor(standard_unwarp, cv2.COLOR_BGR2RGB))
 ax1.set_title('Standard')
 ax2.imshow(cv2.cvtColor(original_photo_unwarp, cv2.COLOR_BGR2RGB))
 ax2.set_title('Original photo')
-plt.show()
 
 # 測試與比較
 delta_e_2 = cba.compare_colorboard(standard_val, original_photo_val)
@@ -74,8 +79,5 @@ ax.legend()
 ax.set_title('Histogram of delta_e_1 and delta_e_2')
 ax.set_xlabel('(i,j)')
 ax.set_ylabel('Value')
-
-# print(np.mean(delta_e_1))
-# print(np.mean(delta_e_2))
 
 plt.show()

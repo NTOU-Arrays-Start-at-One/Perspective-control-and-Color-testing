@@ -3,6 +3,7 @@
 #   用於將色板內的色塊提取出來並檢驗顏色
 #----------------------------------------------------#
 
+import os
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
@@ -152,6 +153,7 @@ def correction_and_analysis(colorBoard):
   # 設置圖形大小
   fig.set_figwidth(8)
   fig.set_figheight(8)
+  
   plt.show()
 
   return colorBlockVal, dc_img
@@ -198,7 +200,6 @@ def compare_colorboard(a_val, b_val):
   sm = plt.cm.ScalarMappable(cmap=plt.cm.Greens, norm=plt.Normalize(vmin=0, vmax=1))
   sm.set_array([])
   fig.colorbar(sm, cax=cax)
-  plt.show()
 
   delta_e_copy = delta_e.copy()
   return delta_e_copy
