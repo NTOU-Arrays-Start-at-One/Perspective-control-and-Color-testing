@@ -68,4 +68,4 @@ If you would like to contribute to this project, please follow these steps:
 3. Push your changes to your forked repository.
 4. Create a pull request to merge your changes into the main repository.
 
-<img src="https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/delta_e_1_unwarp_restored_model.png?raw=true" width="500"><img src="https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/delta_e_1.png?raw=true" width="250">
+<img src="https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/delta_e_1_unwarp_restored_model.png?raw=true" width="500"> <img src="https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/delta_e_1.png?raw=true" width="250">
