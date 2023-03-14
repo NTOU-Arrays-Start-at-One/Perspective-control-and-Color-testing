@@ -1,9 +1,3 @@
-<style>
-hr:nth-of-type(2) {
-  border-color: #00F !important;
-}
-</style>
-
 # Perspective-control-and-Color-testing
 
 此專案的目的在於比較色彩還原後的影像與其原始影像的色彩差異，並透過分析兩張影像中色板來達成此目的。
@@ -13,7 +7,7 @@ This project aims to compare the color difference between color-restored images 
 ![unwarp_restored_model and Original_photo](https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/unwarp_restored_model%20and%20Original_photo.png?raw=true)
 ![Histogram of delta_e_1 and delta_e_2.png](https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/Histogram%20of%20delta_e_1%20and%20delta_e_2.png?raw=true)
 
-![](https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/delta_e_1_unwarp_restored_model.png?raw=true) ![](https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/delta_e_1.png?raw=true)
+![](https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/delta_e_1_unwarp_restored_model.png?raw=true =200x) ![](https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/delta_e_1.png?raw=true =200x)
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/15IAx8eKlwPET7O_HTYrmF4C4BVypd9dP?usp=sharing)
 [ipynb](色板校正與分析_2.ipynb)
