@@ -8,7 +8,20 @@ This project aims to compare the color difference between color-restored images 
 [ipynb](色板校正與分析_2.ipynb)
 ## Installation
 
-To run this project on your local machine, follow these steps:
++ 若要在您的本地端執行此專案，請依照以下步驟進行：
+
+1. 執行以下指令來複製此專案的 repository：
+```bash
+git clone https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing.git
+```
+
+2. 執行以下指令安裝所需的套件：
+```bash
+pip install -r requirements.txt
+```
+這個指令會安裝此專案所需的所有套件。
+
++ To run this project on your local machine, follow these steps:
 
 1. Clone the repository by running the following command:
 ```bash
@@ -23,22 +36,18 @@ This will install all the necessary packages for this project.
 
 ## Usage
 
-執行此專案，請按照以下步驟執行程式
-
-To use this project, follow these steps:
-
++ 執行此專案，請按照以下步驟執行程式：
 1. 將原始的圖板影像放入 `src/Original` 。
 2. 將還原後的圖板影像放入 `src/Result_restored` 。
 3. 執行 `python try.py` 以顯示色差的比較與結果。
 4. 執行完成後，文字與圖片會儲存於 `result` 中。
+請按照以上步驟執行程式。如有任何問題，請聯絡開發人員。
 
++ To use this project, follow these steps:
 1. Place the original canvas image in the `src/Original directory` .
 2. Place the restored canvas image in the `src/Result_restored directory` .
 3. Run `python try.py` to display a comparison of the color difference and results.
 4. Upon completion, the text and images will be stored in the `result` directory.
-
-請按照以上步驟執行程式。如有任何問題，請聯絡開發人員。
-
 Please follow the above steps to run the program. If you encounter any issues, contact the developers.
 
 ## Contributing
