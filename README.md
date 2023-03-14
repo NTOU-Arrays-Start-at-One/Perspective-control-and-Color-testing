@@ -4,6 +4,9 @@
 
 This project aims to compare the color difference between color-restored images and their original counterparts. The actual process involves analyzing the color palette differences between the two images.
 
+![unwarp_restored_model and Original_photo](https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/unwarp_restored_model%20and%20Original_photo.png?raw=true)
+![Histogram of delta_e_1 and delta_e_2.png](https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/Histogram%20of%20delta_e_1%20and%20delta_e_2.png?raw=true)
+
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/15IAx8eKlwPET7O_HTYrmF4C4BVypd9dP?usp=sharing)
 [ipynb](色板校正與分析_2.ipynb)
 ## Installation
@@ -20,6 +23,8 @@ git clone https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Co
 pip install -r requirements.txt
 ```
 這個指令會安裝此專案所需的所有套件。
+
+---
 
 + To run this project on your local machine, follow these steps:
 
@@ -41,6 +46,7 @@ This will install all the necessary packages for this project.
 2. 將還原後的圖板影像放入 `src/Result_restored` 。
 3. 執行 `python try.py` 以顯示色差的比較與結果。
 4. 執行完成後，文字與圖片會儲存於 `result` 中。
+
 請按照以上步驟執行程式。如有任何問題，請聯絡開發人員。
 
 + To use this project, follow these steps:
@@ -48,6 +54,7 @@ This will install all the necessary packages for this project.
 2. Place the restored canvas image in the `src/Result_restored directory` .
 3. Run `python try.py` to display a comparison of the color difference and results.
 4. Upon completion, the text and images will be stored in the `result` directory.
+
 Please follow the above steps to run the program. If you encounter any issues, contact the developers.
 
 ## Contributing
