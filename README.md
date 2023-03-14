@@ -59,8 +59,8 @@ This will install all the necessary packages for this project.
 
 Please follow the above steps to run the program. If you encounter any issues, contact the developers.
 
-<img src="https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/delta_e_1_unwarp_restored_model.png?raw=true" width="500">
-<img src="https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/delta_e_1.png?raw=true" width="400">
+![](https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/delta_e_1_unwarp_restored_model.png?raw=true)
+![](https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/delta_e_1.png?raw=true)
 
 ## Contributing
 
