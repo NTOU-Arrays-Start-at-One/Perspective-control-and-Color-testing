@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 #   find_edge_of_colorboard
 #   尋找色板邊緣，用於透視校正。
 #----------------------------------------------------#
-def find_edge_of_colorboard(im):
+def find_edge_of_colorboard(im, display = 1):
     # cv2.imshow(im)
 
     # 圖片轉為灰階
@@ -42,9 +42,10 @@ def find_edge_of_colorboard(im):
             for point in approx:
                 rect_points.append((point[0][0], point[0][1]))
                 cv2.circle(im, (point[0][0], point[0][1]), 5, (0, 0, 255), -1)
-
-    # 顯示結果
-    # cv2.imshow('find_corners',im)
+                
+    # 是否顯示結果
+    if display == 1:
+      cv2.imshow('find_corners',im)
 
     return rect_points
 
@@ -54,7 +55,7 @@ def find_edge_of_colorboard(im):
 #   unwarp
 #   影像映射、展平。
 #----------------------------------------------------#
-def unwarp(img, src, dst, testing):
+def unwarp(img, src, dst, display = 1):
     h, w = img.shape[:2]
     dstW, dstH = map(int, dst[3])
     # use cv2.getPerspectiveTransform() to get M, the transform matrix, and Minv, the inverse
@@ -62,7 +63,7 @@ def unwarp(img, src, dst, testing):
     # use cv2.warpPerspective() to warp your image to a top-down view
     warped = cv2.warpPerspective(img, M, (dstW, dstH), flags=cv2.INTER_LINEAR)
 
-    if testing:
+    if display:
         f, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
         f.subplots_adjust(hspace=.2, wspace=.05)
         ax1.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
@@ -75,16 +76,15 @@ def unwarp(img, src, dst, testing):
         #ax2.imshow(cv2.flip(warped, 1)) #1:水平翻轉 0:垂直翻轉 -1:水平垂直翻轉
         ax2.imshow(cv2.cvtColor(warped, cv2.COLOR_BGR2RGB))
         ax2.set_title('Distortion Correction Result', fontsize=15)
-        plt.show()
         return warped
     else:
-        return warped, M
+        return warped
 
 #----------------------------------------------------#
 #   perspective_correction
 #   對色板透視校正，將色板抓出。
 #----------------------------------------------------#
-def perspective_correction(im, rect_point):
+def perspective_correction(im, rect_point, display = 1):
   #圖片大小
   w, h = im.shape[0], im.shape[1]
   
@@ -105,7 +105,7 @@ def perspective_correction(im, rect_point):
           (700, 700)])
 
   #校正與輸出
-  return unwarp(im, src, dst, True)
+  return unwarp(im, src, dst, display)
 
 # ---------------------------------色板方向校正--------------------------------- #
 

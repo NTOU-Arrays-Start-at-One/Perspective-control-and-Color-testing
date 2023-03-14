@@ -7,7 +7,9 @@ import os
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
 import cbe  # cbe: ColorBoard Extraction
+import fileio as fio # to save file
 
 from skimage import io
 from skimage import transform
@@ -120,41 +122,42 @@ def get_ssim_score(im1, im2):
 # correction_and_analysis
 # 對圖板做色塊的影像處理與分析
 #----------------------------------------------------#
-def correction_and_analysis(colorBoard):
+def correction_and_analysis(colorBoard, display = 1):
   colorBoard_copy = colorBoard.copy() # 複製副本以避免畫圖影響結果
-  rect_point = cbe.find_edge_of_colorboard(colorBoard) # 找尋邊緣，並回傳矩形的頂點座標
-  dc_img = cbe.perspective_correction(colorBoard_copy, rect_point) # 對矩形的頂點座標做透視校正
+  rect_point = cbe.find_edge_of_colorboard(colorBoard, False) # 找尋邊緣，並回傳矩形的頂點座標
+  dc_img = cbe.perspective_correction(colorBoard_copy, rect_point, False) # 對矩形的頂點座標做透視校正
   dc_img = cbe.rotate(dc_img) # 旋轉
-  plt.imshow(cv2.cvtColor(dc_img, cv2.COLOR_BGR2RGB))
   colorBlockVal = color_analysis(dc_img) # 處理並輸出色塊的代表顏色，colorBlockVal[i][j]為色塊顏色
   #draw_rect(dc_img) # 畫出色塊
 
-  # 代表顏色的表格輸出
-  fig, ax = plt.subplots()
-  ax.axis('off')
-  # 設置單元格文本和顏色
-  cell_text = []
-  for i in range(5):
-      row_text = []
-      row_colors = []
-      for j in range(5):
-          # 將RGB顏色塊和像素值一起顯示
-          cell_val = f"({i},{j})\n\n{colorBlockVal[i][j][0]:.1f}\n{colorBlockVal[i][j][1]:.1f}\n{colorBlockVal[i][j][2]:.1f}"
-          row_text.append(cell_val)
-      cell_text.append(row_text)
-  # 創建表格
-  table = ax.table(cellText=cell_text, cellLoc='center', bbox=[0,0,1,1])
-  # 設置表格標題
-  ax.set_title('colorBlockVal')
-  # 設置表格大小和字體大小
-  table.auto_set_font_size(False)
-  table.set_fontsize(14)
-  table.scale(1, 2)
-  # 設置圖形大小
-  fig.set_figwidth(8)
-  fig.set_figheight(8)
-  
-  plt.show()
+  if display == 1:
+    plt.imshow(cv2.cvtColor(dc_img, cv2.COLOR_BGR2RGB))
+    # 代表顏色的表格輸出
+    fig, ax = plt.subplots()
+    ax.axis('off')
+    # 設置單元格文本和顏色
+    cell_text = []
+    for i in range(5):
+        row_text = []
+        row_colors = []
+        for j in range(5):
+            # 將RGB顏色塊和像素值一起顯示
+            cell_val = f"({i},{j})\n\n{colorBlockVal[i][j][0]:.1f}\n{colorBlockVal[i][j][1]:.1f}\n{colorBlockVal[i][j][2]:.1f}"
+            row_text.append(cell_val)
+        cell_text.append(row_text)
+    # 創建表格
+    table = ax.table(cellText=cell_text, cellLoc='center', bbox=[0,0,1,1])
+    # 設置表格標題
+    ax.set_title('colorBlockVal')
+    # 設置表格大小和字體大小
+    table.auto_set_font_size(False)
+    table.set_fontsize(14)
+    table.scale(1, 2)
+    # 設置圖形大小
+    fig.set_figwidth(8)
+    fig.set_figheight(8)
+
+    plt.show()
 
   return colorBlockVal, dc_img
 
@@ -170,7 +173,6 @@ def compare_colorboard(a_val, b_val):
     for j in range(0, 5):
       row.append(get_delta_e(a_val[i][j],b_val[i][j]))
     delta_e.append(row)
-
   # 將 delta_e 正規化到 0~1 範圍內
   scaler = MinMaxScaler()
   delta_e_norm = scaler.fit_transform(delta_e)
@@ -184,6 +186,7 @@ def compare_colorboard(a_val, b_val):
       for j in range(5):
           row.append(f"({j},{i}),{delta_e[j][i]:.3f}")
       cell_text.append(row)
+  
   # 繪製表格並設定顏色
   table = ax.table(cellText=cell_text, cellLoc='center', bbox=[0,0,0.8,1], cellColours=plt.cm.Greens(delta_e_norm))
   ax.set_title('Delta E')

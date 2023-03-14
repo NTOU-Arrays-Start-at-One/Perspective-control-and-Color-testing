@@ -23,14 +23,23 @@ This will install all the necessary packages for this project.
 
 ## Usage
 
+執行此專案，請按照以下步驟執行程式
+
 To use this project, follow these steps:
 
-1. Open a terminal and navigate to the project directory.
-2. Run the following command to start the project:
-```
+1. 將原始的圖板影像放入 `src/Original` 。
+2. 將還原後的圖板影像放入 `src/Result_restored` 。
+3. 執行 `python try.py` 以顯示色差的比較與結果。
+4. 執行完成後，文字與圖片會儲存於 `result` 中。
 
-```
-4. Follow the on-screen instructions to use the project.
+1. Place the original canvas image in the `src/Original directory` .
+2. Place the restored canvas image in the `src/Result_restored directory` .
+3. Run `python try.py` to display a comparison of the color difference and results.
+4. Upon completion, the text and images will be stored in the `result` directory.
+
+請按照以上步驟執行程式。如有任何問題，請聯絡開發人員。
+
+Please follow the above steps to run the program. If you encounter any issues, contact the developers.
 
 ## Contributing
 
