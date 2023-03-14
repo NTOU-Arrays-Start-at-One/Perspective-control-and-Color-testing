@@ -7,8 +7,6 @@ This project aims to compare the color difference between color-restored images 
 ![unwarp_restored_model and Original_photo](https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/unwarp_restored_model%20and%20Original_photo.png?raw=true)
 ![Histogram of delta_e_1 and delta_e_2.png](https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/Histogram%20of%20delta_e_1%20and%20delta_e_2.png?raw=true)
 
-<img src="https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/delta_e_1_unwarp_restored_model.png?raw=true" width="600"><img src="https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/delta_e_1.png?raw=true" width="300">
-
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/15IAx8eKlwPET7O_HTYrmF4C4BVypd9dP?usp=sharing)
 [ipynb](色板校正與分析_2.ipynb)
 ## Installation
@@ -69,3 +67,5 @@ If you would like to contribute to this project, please follow these steps:
 2. Create a new branch and make your changes.
 3. Push your changes to your forked repository.
 4. Create a pull request to merge your changes into the main repository.
+
+<img src="https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/delta_e_1_unwarp_restored_model.png?raw=true" width="500"><img src="https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/delta_e_1.png?raw=true" width="250">
