@@ -59,6 +59,9 @@ This will install all the necessary packages for this project.
 
 Please follow the above steps to run the program. If you encounter any issues, contact the developers.
 
+<img src="https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/delta_e_1_unwarp_restored_model.png?raw=true" width="500">
+<img src="https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/delta_e_1.png?raw=true" width="400">
+
 ## Contributing
 
 If you would like to contribute to this project, please follow these steps:
@@ -67,5 +70,3 @@ If you would like to contribute to this project, please follow these steps:
 2. Create a new branch and make your changes.
 3. Push your changes to your forked repository.
 4. Create a pull request to merge your changes into the main repository.
-
-<img src="https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/delta_e_1_unwarp_restored_model.png?raw=true" width="500"> <img src="https://github.com/NTOU-Arrays-Start-at-One/Perspective-control-and-Color-testing/blob/main/result/result/delta_e_1.png?raw=true" width="250">
