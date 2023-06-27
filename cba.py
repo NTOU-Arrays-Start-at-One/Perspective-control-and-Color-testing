@@ -165,7 +165,7 @@ def correction_and_analysis(colorBoard, display = 1):
 # compare_colorboard
 # 對兩色板做色彩比較
 #----------------------------------------------------#
-def compare_colorboard(a_val, b_val):
+def compare_colorboard(a_val, b_val): # 色差計算
   # 計算色差
   delta_e = []
   for i in range(0, 5):
@@ -184,7 +184,7 @@ def compare_colorboard(a_val, b_val):
   for i in range(5):
       row = []
       for j in range(5):
-          row.append(f"({j},{i}),{delta_e[j][i]:.3f}")
+          row.append(f"({i},{j}),{delta_e[i][j]:.3f}")
       cell_text.append(row)
   
   # 繪製表格並設定顏色
