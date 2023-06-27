@@ -94,13 +94,13 @@ def color_analysis(im):
 # 以CIE1976和CIEDE2000計算測試色塊間的色差值，用來比較色彩還原效果。
 #----------------------------------------------------#
 def get_delta_e(color1, color2):
-  # 色彩空間轉換(RGB to LAB)  
-  def rgb2lab(rgb):
-      return convert_color(sRGBColor(rgb[0], rgb[1], rgb[2]), LabColor)
+  # 色彩空間轉換(BGR to LAB)  
+  def bgr2lab(bgr):
+      return convert_color(sRGBColor(bgr[2], bgr[1], bgr[0]), LabColor)
 
   # 計算CIE1976和CIEDE2000的色差
-  delta_e_1976 = delta_e_cie1976(rgb2lab(color1), rgb2lab(color2))
-  delta_e_2000 = delta_e_cie2000(rgb2lab(color1), rgb2lab(color2))
+  delta_e_1976 = delta_e_cie1976(bgr2lab(color1), bgr2lab(color2))
+  delta_e_2000 = delta_e_cie2000(bgr2lab(color1), bgr2lab(color2))
 
   #print(f"CIE 1976色差：{delta_e_1976:.2f}")
   #print(f"CIEDE 2000色差：{delta_e_2000:.2f}")
